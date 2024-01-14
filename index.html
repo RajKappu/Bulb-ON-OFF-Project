@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+
+    <h1 style="margin: 40px; font-family: Cambria; font-size: 45px; 
+    color: darkgreen; 
+    border-bottom-style: dashed;
+    border-bottom-color: darkcyan;">
+    Bulb On/Off Project
+    </h1>
+    <button onclick="bulbOn()" style="padding:4px; margin-right: 20px;">Turn On</button>
+    <button onclick="bulbOff()" style="padding: 4px; margin-left: 20px;">Turn Off</button>
+    <button id="onOffButton" onclick="buttonTogle()" style="padding: 4px; margin-left: 40px">ON</button>
+
+    <div class="bulb-container" style="margin: 90px;">
+        <img id="bulb" src="OFF.jpg" alt="">
+    </div>
+
+    <script>
+        const bulbOn = ()=>{
+            let bulb = document.getElementById("bulb")
+            bulb.setAttribute("src","ON.jpg")
+        }
+
+        const bulbOff = ()=>{
+            let bulb = document.getElementById("bulb")
+            bulb.setAttribute("src","OFF.jpg")
+        }
+
+        const buttonTogle= ()=>{
+            let imgObj = document.getElementById("bulb");
+            let srcValue = imgObj.getAttribute("src");
+            
+            let buttonObj = document.getElementById("onOffButton");
+            let buttonText = buttonObj.innerHTML;
+
+            if(srcValue=="ON.jpg"){
+                bulbOff();
+                buttonObj.innerHTML = 'ON'
+            }else{
+                bulbOn();
+                buttonObj.innerHTML = 'OFF'
+            }
+        }
+    </script>
+
+    
+</body>
+</html
